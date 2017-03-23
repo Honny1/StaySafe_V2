@@ -1,0 +1,24 @@
+<resources>
+    <string name="notify_Title">Question?</string>
+    <string name="True">Yes</string>
+    <string name="False">No</string>
+    <string name="Notify_BadAn">Bad answer!</string>
+    <string name="app_name">StaySafe</string>
+    <string name="Home_btn_dangerous">Internet Dangers</string>
+    <string name="Home_btn_avoid">Real life Dangers</string>
+    <string name="Home_btn_tips">Quick tips</string>
+    <string name="home_dialog_choose">Choose the topics</string>
+    <string name="dialog_home_internet">Dangers on Internet</string>
+    <string name="dialog_home_realLife">Dangers in real life</string>
+    <string name="logout">LOGOUT</string>
+    <string name="avoid_dangers_on_internet">Avoid Dangers on Internet</string>
+    <string name="avoid_dangers_in_real_life">Avoid Dangers in real life</string>
+    <string name="name_admin">Name(admin)</string>
+    <string name="pass_admin">Pass(admin)</string>
+    <string name="register">Register</string>
+    <string name="login">login</string>
+    <string name="name">Name</string>
+    <string name="pass">Pass</string>
+    <string name="email">Email</string>
+    <string name="back">back</string>
+</resources>

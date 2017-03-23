@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="@string/home_dialog_choose"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#00f"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/avoid_dialog_home_btn_internet"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/dialog_home_realLife"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#55f"/>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#000" />
+        <Button
+            android:id="@+id/avoid_dialog_home_btn_realLife"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/avoid_dangers_in_real_life"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f55"/>
+    </LinearLayout>
+
+</LinearLayout>

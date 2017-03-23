@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Home_btn_avoid">Come Evitarli</string>
+    <string name="Home_btn_dangerous">Tipi di pericoli</string>
+    <string name="Home_btn_tips">Consigli Rapidi</string>
+    <string name="avoid_dangers_in_real_life">Evitare pericoli nella vita reale</string>
+    <string name="avoid_dangers_on_internet">Evitare pericoli su Internet</string>
+    <string name="dialog_home_internet">Pericoli su Internet</string>
+    <string name="dialog_home_realLife">Pericoli nella vita reale</string>
+    <string name="home_dialog_choose">Scegli la categoria</string>
+    <string name="logout"></string>
+    <string name="notify_Title">Domande?</string>
+    <string name="False">No</string>
+    <string name="app_name" translatable="false"></string>
+    <string name="True">Si</string>
+    <string name="Notify_BadAn">Risposta errata!</string>
+</resources>

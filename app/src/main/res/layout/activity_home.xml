@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pc.staysafe.HomeActivity"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@drawable/question">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/Home_btn_dangers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/Home_btn_dangerous" />
+
+        <Button
+            android:id="@+id/Home_btn_avoid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onHomeButtonClick"
+            android:text="@string/Home_btn_avoid" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/Home_btn_tips"
+            android:text="@string/Home_btn_tips"
+            android:onClick="onHomeButtonClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onHomeButtonClick"
+        android:text="@string/logout"/>
+    </LinearLayout>
+
+</LinearLayout>

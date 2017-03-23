@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StaySafe</string>
+    <string name="False">Ne</string>
+    <string name="Home_btn_avoid"></string>
+    <string name="Home_btn_tips">Quick tips</string>
+    <string name="Notify_BadAn">špatná odpověď!</string>
+    <string name="True">Ano</string>
+</resources>
