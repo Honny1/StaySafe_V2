@@ -31,6 +31,10 @@ public class HomeActivity extends AppCompatActivity {
      * @param view the button which id used
      */
     public void onHomeButtonClick(View view) {
+        Bundle extras = new Bundle();
+        extras.putInt("Type",0);
+        extras.putInt("Type_Of_Danger",0);
+
         switch (view.getId()) {
             case R.id.Home_btn_dangers:
                 Log.w(getLocalClassName(), "Home_btn_dangers");
@@ -52,21 +56,31 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.dialog_home_btn_internet:
                 Log.w(getLocalClassName(), "danger_btn_internet");
-                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0).putExtra("Type_Of_Danger",0));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",0);
+                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtras(extras));
                 break;
 
             case R.id.dialog_home_btn_realLife:
                 Log.w(getLocalClassName(), "danger_btn_realLife");
-                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0).putExtra("Type_Of_Danger",1));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",1);
+                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtras(extras));
                 break;
 
             case R.id.avoid_dialog_home_btn_internet:
-                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0).putExtra("type_Of_Danger",1));
+                Log.w(getLocalClassName(), "Avoid_btn_Intenet");
+                extras.putInt("Type",1);
+                extras.putInt("Type_Of_Danger",0);
+                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtras(extras));
                 break;
 
 
             case R.id.avoid_dialog_home_btn_realLife:
-                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0).putExtra("Type_Of_Danger",1));
+                extras.putInt("Type",1);
+                extras.putInt("Type_Of_Danger",1);
+                Log.w(getLocalClassName(), "Avoid_btn_RealLife");
+                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtras(extras));
                 break;
 
             case R.id.logout:
