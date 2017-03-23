@@ -32,8 +32,10 @@ public class DangerActivity extends AppCompatActivity {
         int Type_Of_Danger = Extra.getInt("Type_Of_Danger");
         Log.d("ERRPR","Activitz" +Integer.toString(Type));
         switch(Type_Of_Danger){
-            case 0:         file = getBaseContext().getResources().openRawResource(R.raw.danger); break;
-            case 1:         file = getBaseContext().getResources().openRawResource(R.raw.avoid_danger); break;
+            case 0:         file = getBaseContext().getResources().openRawResource(R.raw.danger_internet); break;
+            case 1:         file = getBaseContext().getResources().openRawResource(R.raw.avoid_danger_internet); break;
+            case 2:         file = getBaseContext().getResources().openRawResource(R.raw.danger_reallife); break;
+            case 3:         file = getBaseContext().getResources().openRawResource(R.raw.avoid_danger_reallife); break;
         }
         tips = (TextView) findViewById(R.id.tip);
         //getBaseContext().getResources().openRawResource(R.raw.danger)
