@@ -1,23 +1,23 @@
-msg1.1-it =Ciao
-msg1.1-en =Text about avoid internet danger.
+msg0.1-it =Ciao
+msg0.1-en =Text about avoid internet danger.
 msg1.1-it=Prova
 
-msg1.2-it =Ciao
-msg1.2-en =Text about avoid internet danger1.
+msg0.2-it =Ciao
+msg0.2-en =Text about avoid internet danger1.
 msg1.2-it=Prova
 
-msg1.2-it =Ciao
-msg1.2-en =Text about avoid internet danger2.
+msg0.2-it =Ciao
+msg0.2-en =Text about avoid internet danger2.
 msg1.2-it=Prova
 
-msg1.3-it =Ciao
-msg1.3-en =Text about avoid internet danger3.
+msg0.3-it =Ciao
+msg0.3-en =Text about avoid internet danger3.
 msg1.3-it=Prova
 
-msg1.4-it =Ciao
-msg1.4-en =Text about avoid internet danger4.
+msg0.4-it =Ciao
+msg0.4-en =Text about avoid internet danger4.
 msg1.4-it=Prova
 
-msg1.5-it =Ciao
-msg1.5-en =Text about avoid internet danger5.
+msg0.5-it =Ciao
+msg0.5-en =Text about avoid internet danger5.
 msg1.5-it=Prova
