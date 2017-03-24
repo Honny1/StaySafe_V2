@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
             case R.id.avoid_dialog_home_btn_internet:
-
+// need fix
                 Log.w(getLocalClassName(), "danger_btn_realLife");
                 extras.putInt("Type",0);
                 extras.putInt("Type_Of_Danger",2);
