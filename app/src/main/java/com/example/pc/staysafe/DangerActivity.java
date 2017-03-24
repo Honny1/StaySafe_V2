@@ -19,66 +19,74 @@ import java.io.InputStreamReader;
 import java.util.Locale;
 
 public class DangerActivity extends AppCompatActivity {
-    private TextView tips;
-    private int Type,Type_Of_Danger;
-    private final PositionMemory position = new PositionMemory(5);
-    private InputStream file;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_internet);
-        Bundle Extra = getIntent().getExtras();
-        int Type = Extra.getInt("Type");
-        int Type_Of_Danger = Extra.getInt("Type_Of_Danger");
-        Log.d("ERRPR","Activitz" +Integer.toString(Type));
-        switch(Type_Of_Danger){
-            case 0:         file = getBaseContext().getResources().openRawResource(R.raw.danger_internet); break;
-            case 1:         file = getBaseContext().getResources().openRawResource(R.raw.avoid_danger_internet); break;
-            case 2:         file = getBaseContext().getResources().openRawResource(R.raw.danger_reallife); break;
-            case 3:         file = getBaseContext().getResources().openRawResource(R.raw.avoid_danger_reallife); break;
-        }
-        tips = (TextView) findViewById(R.id.tip);
-        //getBaseContext().getResources().openRawResource(R.raw.danger)
-        tips.setText(Answer.GetAnswer(Type,position.getPosition(),file));
-    }
+        private TextView tips;
+        private int Type;
+        private final PositionMemory position = new PositionMemory(5);
 
-    public void next(View view) {
-        question();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_internet);
+            Type = getIntent().getIntExtra("Type", 0);
+            tips = (TextView) findViewById(R.id.tip);
+            tips.setText(GetAnswer(Type,position.getPosition()));
+        }
+
+        public void next(View view) {
+            question();
        /* if (position.incrementPosition()) {
             tips.setText("Danger" + Integer.toString(position.getPosition()));
         } else {
             startActivity(new Intent(this, TestActivity.class));
         }*/
-    }
+        }
 
-    public void back (View view){
-        if (position.decrementPosition()) {
-            tips.setText(Answer.GetAnswer(Type,position.getPosition(),file));
+        public void back (View view){
+            if (position.decrementPosition()) {
+                tips.setText(GetAnswer(Type,position.getPosition()));
+            }
+        }
+        public void question(){
+            AlertDialog.Builder myAlert= new AlertDialog.Builder(this);
+            myAlert.setMessage(R.string.notify_Title)
+                    .setPositiveButton(R.string.True, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            tips.setText(GetAnswer(Type,position.getPosition()));
+                            if (position.incrementPosition()) {
+                                tips.setText(GetAnswer(Type,position.getPosition()));
+                            } else {
+                                startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                            }
+                            dialog.dismiss();
+                        }
+                    })
+                    .setNegativeButton(R.string.False, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            Toast.makeText(getApplicationContext(),R.string.Notify_BadAn, Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+            myAlert.show();
+        }
+        public String GetAnswer(int type,int position) {
+            try {
+                String language = Locale.getDefault().getLanguage();
+                InputStream raw = getBaseContext().getResources().openRawResource(R.raw.danger_internet);
+                BufferedReader is = new BufferedReader(new InputStreamReader(raw, "UTF8"));
+                String Key;
+                String a =("msg" + Integer.toString(type) + '.'+ Integer.toString(position)+ '-' +language);
+                while((Key = is.readLine())!=null) {
+                    Log.d("ERROR", a);
+                    Log.d("ERROR", Integer.toString(Key.lastIndexOf(a)));
+                    if (Key.lastIndexOf(a) == 0) {
+                        return Key.substring(Key.lastIndexOf('=')+1);
+
+                    }
+                }return "No string was found";
+            } catch (Exception e) {
+                return e.toString();
+            }
         }
     }
-    public void question(){
-        AlertDialog.Builder myAlert= new AlertDialog.Builder(this);
-        myAlert.setMessage(R.string.notify_Title)
-                .setPositiveButton(R.string.True, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        tips.setText(Answer.GetAnswer(Type,position.getPosition(),file));
-                        if (position.incrementPosition()) {
-                            tips.setText(Answer.GetAnswer(Type,position.getPosition(),file));
-                        } else {
-                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
-                        }
-                        dialog.dismiss();
-                    }
-                })
-                .setNegativeButton(R.string.False, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getApplicationContext(),R.string.Notify_BadAn, Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-        myAlert.show();
-    }
-
-}
