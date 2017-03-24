@@ -24,7 +24,9 @@
         <activity android:name=".AvoidInternetActivity" />
         <activity android:name=".AvoidReallifeActivity" />
         <activity android:name=".Register" />
-        <activity android:name=".DangerActivity1"></activity>
+        <activity android:name=".DangerActivity1" />
+        <activity android:name=".DangerActivity2" />
+        <activity android:name=".DangerActivity3"></activity>
     </application>
 
 </manifest>
