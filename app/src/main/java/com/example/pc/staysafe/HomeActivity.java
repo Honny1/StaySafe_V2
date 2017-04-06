@@ -37,51 +37,43 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.Home_btn_internet:
-                Log.w(getLocalClassName(), "Home_btn_internet");
                 chooseTopicDialog();
                 break;
 
             case R.id.Home_btn_realLife:
-                Log.w(getLocalClassName(), "Home_btn_realLife");
                 chooseTopicDialog2();
                 break;
 
             case R.id.Home_btn_tips:
-                Log.w(getLocalClassName(), "Home_btn_tips");
-
                 // No activity yet
                 Toast.makeText(this, "No activity yet", Toast.LENGTH_SHORT).show();
                 break;
 
-
             case R.id.dialog_home_btn_internet:
-                Log.w(getLocalClassName(), "danger_btn_internet");
                 startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0));
                 break;
 
             case R.id.dialog_home_btn_internet_avoid:
-                Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity1.class).putExtra("Type",0));
                 break;
 
             case R.id.dialog_home_btn_realLife:
-// need fix
-                Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity2.class).putExtra("Type",0));
                 break;
 
-// need fix
             case R.id.dialog_home_btn_realLife_avoid:
-                Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity3.class).putExtra("Type",0));
                 break;
 
             case R.id.logout:
-                Log.w(getLocalClassName(), "logout");
                 SharedPreferences sharedpreferences = getSharedPreferences(Login.MyPREFERENCES, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.clear();
                 editor.commit();
+                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.login:
                 startActivity(new Intent(getBaseContext(), Login.class));
                 break;
         }

@@ -21,5 +21,6 @@
     <string name="pass">Pass</string>
     <string name="email">Email</string>
     <string name="back">back</string>
+    <string name="login1">Login</string>
 
 </resources>

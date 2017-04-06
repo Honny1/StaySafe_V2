@@ -24,7 +24,7 @@ public class LogoActivity extends Activity {
             public void run() {
                 try {
                     sleep(3500);
-                    startActivity(new Intent(getBaseContext(),Login.class));
+                    startActivity(new Intent(getBaseContext(),HomeActivity.class));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

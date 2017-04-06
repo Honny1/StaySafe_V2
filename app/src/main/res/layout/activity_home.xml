@@ -56,10 +56,18 @@
         android:gravity="center">
     <Button
         android:id="@+id/logout"
+        android:textColor="#ff0000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onHomeButtonClick"
         android:text="@string/logout"/>
+    <Button
+        android:id="@+id/login"
+        android:textColor="#00ff00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onHomeButtonClick"
+        android:text="@string/login1"/>
     </LinearLayout>
 
 </LinearLayout>
