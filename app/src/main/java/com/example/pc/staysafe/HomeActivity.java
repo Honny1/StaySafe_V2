@@ -59,19 +59,19 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0));
                 break;
 
-            case R.id.dialog_home_btn_realLife:
+            case R.id.dialog_home_btn_internet_avoid:
                 Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity1.class).putExtra("Type",0));
                 break;
 
-            case R.id.avoid_dialog_home_btn_internet:
+            case R.id.dialog_home_btn_realLife:
 // need fix
                 Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity2.class).putExtra("Type",0));
                 break;
 
 // need fix
-            case R.id.avoid_dialog_home_btn_realLife:
+            case R.id.dialog_home_btn_realLife_avoid:
                 Log.w(getLocalClassName(), "danger_btn_realLife");
                 startActivity(new Intent(getBaseContext(), DangerActivity3.class).putExtra("Type",0));
                 break;
@@ -95,15 +95,15 @@ public class HomeActivity extends AppCompatActivity {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         (dialog = dialogBuilder.setView(view).create()).show();
         ((Button) view.findViewById(R.id.dialog_home_btn_internet)).setOnClickListener(new CustomOnClickListener());
-        ((Button) view.findViewById(R.id.dialog_home_btn_realLife)).setOnClickListener(new CustomOnClickListener());
+        ((Button) view.findViewById(R.id.dialog_home_btn_internet_avoid)).setOnClickListener(new CustomOnClickListener());
     }
 
     private void chooseTopicDialog2() {
         View view = View.inflate(this, R.layout.dialog_home_choose2, null);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         (dialog = dialogBuilder.setView(view).create()).show();
-        ((Button) view.findViewById(R.id.avoid_dialog_home_btn_internet)).setOnClickListener(new CustomOnClickListener());
-        ((Button) view.findViewById(R.id.avoid_dialog_home_btn_realLife)).setOnClickListener(new CustomOnClickListener());
+        ((Button) view.findViewById(R.id.dialog_home_btn_realLife)).setOnClickListener(new CustomOnClickListener());
+        ((Button) view.findViewById(R.id.dialog_home_btn_realLife_avoid)).setOnClickListener(new CustomOnClickListener());
     }
 
     /**

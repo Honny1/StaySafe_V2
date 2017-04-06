@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:background="#000" />
         <Button
-            android:id="@+id/dialog_home_btn_realLife"
+            android:id="@+id/dialog_home_btn_internet_avoid"
             android:onClick="onHomeButtonClick"
             android:text="@string/avoid_dangers_on_internet"
             android:layout_width="0dp"
