@@ -19,7 +19,7 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/Home_btn_dangers"
+            android:id="@+id/Home_btn_internet"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,7 +27,7 @@
             android:text="@string/Home_btn_dangerous" />
 
         <Button
-            android:id="@+id/Home_btn_avoid"
+            android:id="@+id/Home_btn_realLife"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

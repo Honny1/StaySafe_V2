@@ -3,7 +3,7 @@
     <string name="True">Yes</string>
     <string name="False">No</string>
     <string name="Notify_BadAn">Bad answer!</string>
-    <string name="app_name">StaySafe</string>
+    <string name="app_name" translatable="false">StaySafe</string>
     <string name="Home_btn_dangerous">Internet Dangers</string>
     <string name="Home_btn_avoid">Real-life Dangers</string>
     <string name="Home_btn_tips">Quick tips</string>

@@ -36,13 +36,13 @@ public class HomeActivity extends AppCompatActivity {
         extras.putInt("Type_Of_Danger",0);
 
         switch (view.getId()) {
-            case R.id.Home_btn_dangers:
-                Log.w(getLocalClassName(), "Home_btn_dangers");
+            case R.id.Home_btn_internet:
+                Log.w(getLocalClassName(), "Home_btn_internet");
                 chooseTopicDialog();
                 break;
 
-            case R.id.Home_btn_avoid:
-                Log.w(getLocalClassName(), "Home_btn_avoid");
+            case R.id.Home_btn_realLife:
+                Log.w(getLocalClassName(), "Home_btn_realLife");
                 chooseTopicDialog2();
                 break;
 
