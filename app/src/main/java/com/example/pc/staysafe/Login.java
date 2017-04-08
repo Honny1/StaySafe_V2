@@ -51,6 +51,7 @@ public class Login extends AppCompatActivity {
                     editor.commit();
                     in = new Intent(Login.this,HomeActivity.class);
                     startActivity(in);
+                    finish();
                 }
                 else {
                     Toast.makeText(Login.this, "Bad Login or Pass", Toast.LENGTH_SHORT).show();
@@ -62,6 +63,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 in1 = new Intent(Login.this,Register.class);
                 startActivity(in1);
+                finish();
             }
         });
     }

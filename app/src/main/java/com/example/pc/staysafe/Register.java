@@ -53,6 +53,7 @@ public class Register extends AppCompatActivity {
                 editor.putString(Email, e);
                 editor.commit();
                 startActivity(new Intent(Register.this,Login.class));
+                finish();
             }
         });
     }

@@ -20,6 +20,7 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(View v) {
                 in1 = new Intent(TestActivity.this,HomeActivity.class);
                 startActivity(in1);
+                finish();
             }
         });
     }

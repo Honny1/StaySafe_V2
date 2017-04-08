@@ -50,19 +50,27 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
             case R.id.dialog_home_btn_internet:
-                startActivity(new Intent(getBaseContext(), DangerActivity.class).putExtra("Type",0));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",0);
+                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
                 break;
 
             case R.id.dialog_home_btn_internet_avoid:
-                startActivity(new Intent(getBaseContext(), DangerActivity1.class).putExtra("Type",0));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",1);
+                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
                 break;
 
             case R.id.dialog_home_btn_realLife:
-                startActivity(new Intent(getBaseContext(), DangerActivity2.class).putExtra("Type",0));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",2);
+                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
                 break;
 
             case R.id.dialog_home_btn_realLife_avoid:
-                startActivity(new Intent(getBaseContext(), DangerActivity3.class).putExtra("Type",0));
+                extras.putInt("Type",0);
+                extras.putInt("Type_Of_Danger",3);
+                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
                 break;
 
             case R.id.logout:
