@@ -1,27 +1,22 @@
 package com.example.pc.staysafe;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
     AlertDialog dialog;
+    Intent dangerActivityIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        dangerActivityIntent = new Intent(getBaseContext(), DangerActivityTop.class);
     }
 
     /**
@@ -35,10 +30,6 @@ public class HomeActivity extends AppCompatActivity {
      * @param view the button which id used
      */
     public void onHomeButtonClick(View view) {
-        Bundle extras = new Bundle();
-        extras.putInt("Type",0);
-        extras.putInt("Type_Of_Danger",0);
-
         switch (view.getId()) {
             case R.id.Home_btn_internet:
                 chooseTopicDialog();
@@ -53,36 +44,28 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(this, "No activity yet", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.dialog_home_btn_internet:
-                extras.putInt("Type",0);
-                extras.putInt("Type_Of_Danger",0);
-                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
-                break;
-
-            case R.id.dialog_home_btn_internet_avoid:
-                extras.putInt("Type",0);
-                extras.putInt("Type_Of_Danger",1);
-                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
-                break;
-
-            case R.id.dialog_home_btn_realLife:
-                extras.putInt("Type",0);
-                extras.putInt("Type_Of_Danger",2);
-                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
-                break;
-
-            case R.id.dialog_home_btn_realLife_avoid:
-                extras.putInt("Type",0);
-                extras.putInt("Type_Of_Danger",3);
-                startActivity(new Intent(getBaseContext(), DangerActivityTop.class).putExtras(extras));
-                break;
-
             case R.id.logout:
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
 
                 break;
             case R.id.login:
                 loginDialog();
+                break;
+
+            case R.id.dialog_home_btn_internet:
+                startActivity(dangerActivityIntent.putExtras(createDangersActivityExtras(0, 0)));
+                break;
+
+            case R.id.dialog_home_btn_internet_avoid:
+                startActivity(dangerActivityIntent.putExtras(createDangersActivityExtras(0, 1)));
+                break;
+
+            case R.id.dialog_home_btn_realLife:
+                startActivity(dangerActivityIntent.putExtras(createDangersActivityExtras(0, 2)));
+                break;
+
+            case R.id.dialog_home_btn_realLife_avoid:
+                startActivity(dangerActivityIntent.putExtras(createDangersActivityExtras(0, 3)));
                 break;
 
             case R.id.cancel_in_dialog:
@@ -96,14 +79,17 @@ public class HomeActivity extends AppCompatActivity {
 
             case R.id.login_in_dialog:
                 Toast.makeText(this, "sign in the user ...", Toast.LENGTH_SHORT).show();
-
                 break;
         }
     }
 
-    /**
-     * Show the DialogAlert
-     */
+    private Bundle createDangersActivityExtras(int type, int typeOfDanger) {
+        Bundle extras = new Bundle();
+        extras.putInt("Type", type);
+        extras.putInt("Type_Of_Danger", typeOfDanger);
+        return extras;
+    }
+
     private void chooseTopicDialog() {
         View view = View.inflate(this, R.layout.dialog_home_choose, null);
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);

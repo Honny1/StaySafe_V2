@@ -1,29 +1,27 @@
 package com.example.pc.staysafe;
 
 import android.content.DialogInterface;
-         import android.content.Intent;
-         import android.support.v7.app.AlertDialog;
-         import android.support.v7.app.AppCompatActivity;
-         import android.os.Bundle;
-         import android.util.Log;
-         import android.view.View;
-         import android.widget.TextView;
-         import android.widget.Toast;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-         import com.example.pc.staysafe.Common.Answer;
-         import com.example.pc.staysafe.Common.PositionMemory;
+import com.example.pc.staysafe.Common.PositionMemory;
 
-         import java.io.BufferedReader;
-         import java.io.InputStream;
-         import java.io.InputStreamReader;
-         import java.util.Locale;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Locale;
 
 public class DangerActivityTop extends AppCompatActivity {
     private TextView tips;
     int id;
     private int Type,Type_Of_Danger;
     private final PositionMemory position = new PositionMemory(5);
-    InputStream file;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

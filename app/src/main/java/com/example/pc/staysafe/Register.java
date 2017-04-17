@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
-
     EditText ed1,ed2,ed3;
     Button b1,b2;
 
@@ -36,6 +34,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Register.this,HomeActivity.class));
+                finish();
             }
         });
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -43,19 +42,21 @@ public class Register extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n  = ed1.getText().toString();
-                String ph  = ed2.getText().toString();
-                String e  = ed3.getText().toString();
-
                 SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString(Name, ed1.getText().toString());
+                editor.putString(Phone, ed2.getText().toString());
+                editor.putString(Email, ed3.getText().toString());
+                editor.apply();
 
-                editor.putString(Name, n);
-                editor.putString(Phone, ph);
-                editor.putString(Email, e);
-                editor.commit();
-                startActivity(new Intent(Register.this,HomeActivity.class));
+                startActivity(new Intent(Register.this, HomeActivity.class));
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Register.this, HomeActivity.class));
+        super.onBackPressed();
     }
 }
