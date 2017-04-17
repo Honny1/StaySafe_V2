@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class Register extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Register.this,Login.class));
+                startActivity(new Intent(Register.this,HomeActivity.class));
             }
         });
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -52,7 +53,7 @@ public class Register extends AppCompatActivity {
                 editor.putString(Phone, ph);
                 editor.putString(Email, e);
                 editor.commit();
-                startActivity(new Intent(Register.this,Login.class));
+                startActivity(new Intent(Register.this,HomeActivity.class));
                 finish();
             }
         });

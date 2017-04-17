@@ -1,14 +1,18 @@
 package com.example.pc.staysafe;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
@@ -74,15 +78,25 @@ public class HomeActivity extends AppCompatActivity {
                 break;
 
             case R.id.logout:
-                SharedPreferences sharedpreferences = getSharedPreferences(Login.MyPREFERENCES, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.clear();
-                editor.commit();
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
 
                 break;
             case R.id.login:
-                startActivity(new Intent(getBaseContext(), Login.class));
+                loginDialog();
+                break;
+
+            case R.id.cancel_in_dialog:
+                break;
+
+            case R.id.register_in_dialog:
+                Intent in1 = new Intent(this,Register.class);
+                startActivity(in1);
+                finish();
+                break;
+
+            case R.id.login_in_dialog:
+                Toast.makeText(this, "sign in the user ...", Toast.LENGTH_SHORT).show();
+
                 break;
         }
     }
@@ -104,6 +118,14 @@ public class HomeActivity extends AppCompatActivity {
         (dialog = dialogBuilder.setView(view).create()).show();
         ((Button) view.findViewById(R.id.dialog_home_btn_realLife)).setOnClickListener(new CustomOnClickListener());
         ((Button) view.findViewById(R.id.dialog_home_btn_realLife_avoid)).setOnClickListener(new CustomOnClickListener());
+    }
+    private void loginDialog() {
+        View view = View.inflate(this, R.layout.dialog_login, null);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        (dialog = dialogBuilder.setView(view).create()).show();
+        ((Button) view.findViewById(R.id.login_in_dialog)).setOnClickListener(new CustomOnClickListener());
+        ((Button) view.findViewById(R.id.cancel_in_dialog)).setOnClickListener(new CustomOnClickListener());
+        ((Button) view.findViewById(R.id.register_in_dialog)).setOnClickListener(new CustomOnClickListener());
     }
 
     /**
